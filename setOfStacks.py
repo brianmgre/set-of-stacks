@@ -7,6 +7,12 @@ class SetOfStacks:
 
     def push(self, item):
         if self.stacks[self.length] < self.capacity:
+            self.add()
+            self.stacks[self.length].append(item)
+        else:
+            self.stacks.append([])
+            self.add()
+            self.stacks[self.length].append(item)
 
     def add(self):
         self.length += 1
